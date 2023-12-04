@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>角色图鉴</title>
+    <link rel="stylesheet" href="../CSS/cWIKI.css">
+</head>
+<body>
+    <div class="header">
+
+        <div class="image-header">
+        </div>
+        <nav class="header_nav">
+            <div class="header_textNav">
+                <a href="login-ok.html" class="header_textPublic header_textChecked">
+                    WIKI首页
+                </a>
+                <a href="./Character.html" class="header_textPublic">
+                    角色简介
+                </a>
+                <a href="./GImage.html" class="header_textPublic">
+                    游戏图鉴
+                </a>
+                <a href="./cImage.html" class="header_textPublic">
+                    美图欣赏
+                </a>
+                <a href="./Tongjin.html" class="header_textPublic ">
+                    同人音乐
+                </a>
+                <div class="header_navs">
+
+                </div>
+            </div>
+        </nav>
+    </div>
+    <section class="homebody">
+        <div class="bgimg">
+            <div class="video">
+                <video src="/image/立绘/序列 01.mp4" style="width: 100vw; " loop="loop" muted="muted" autoplay >
+                
+                </video>
+            </div>
+        </div>
+        <div class="imagechange">
+            <div class="bigimage">
+                /*立绘
+                <img src="/image/立绘/i1.png" id="mainImage" alt="" style="left:-200px; bottom: 228px;scale:0.65;" class="mainimage">
+            </div>
+            //名字
+            <div class="imaname">
+                <img src="/image/立绘/s1.png" id="mainImage1" alt="" class="mainimage1" style="width: 450px;top:100px">
+            </div>
+           
+            
+            <div class="imatext">
+
+            </div>
+            <div class="textimage">
+                <img src="/image/立绘/d1.png" id="mainImage3" alt="" class="mainimage3" alt="">
+            </div>
+            <div class="smallchange">
+                    <div class="texts1" data-text="博丽灵梦">
+                        <img src="../image/立绘/y1.png" alt="博丽灵梦" id="s1" class="simage" onclick="changeImage('../image/立绘/i1.png'); changeImage1('../image/立绘/s1.png'); changeImage2('../image/立绘/m1.png'); changeImage3('../image/立绘/d1.png')">
+                    </div>
+                    <div class="texts2" data-text="雾雨魔理沙">
+                        <img src="../image/立绘/y2.png" alt="雾雨魔理沙" id="s2" class="simage" onclick="changeImage('../image/立绘/i2.png'); changeImage1('../image/立绘/s2.png'); changeImage2('../image/立绘/m2.png'); changeImage3('../image/立绘/d2.png')">
+                    </div>
+                    <div class="texts3" data-text="十六夜咲夜">
+                        <img src="../image/立绘/y3.png" alt="十六夜咲夜" id="s3" class="simage" onclick="changeImage('../image/立绘/i3.png'); changeImage1('../image/立绘/s3.png'); changeImage2('../image/立绘/m3.png'); changeImage3('../image/立绘/d3.png')">
+                    </div>
+                         <div class="texts4" data-text="魂魄妖梦">
+                        <img src="../image/立绘/y4.png"  alt="魂魄妖梦" id="s4" class="simage" onclick="changeImage('../image/立绘/i4.png'); changeImage1('../image/立绘/s4.png'); changeImage2('../image/立绘/m4.png'); changeImage3('../image/立绘/d4.png')">
+                    </div>
+                    
+            </div>
+        </div>
+    </section>
+    <script>
+    function changeImage(imageName) {
+      var mainImage = document.getElementById('mainImage');
+      mainImage.style.opacity = 0;
+      setTimeout(function() {
+        mainImage.src = imageName;
+        mainImage.style.opacity = 1;
+      }, 50);
+    }
+    function changeImage1(imageName1) {
+        var mainImage1 = document.getElementById('mainImage1');
+        mainImage1.style.opacity = 0;
+        setTimeout(function() {
+            mainImage1.src = imageName1;
+            mainImage1.style.opacity = 1;
+          }, 50);
+    }
+    function changeImage2(imageName2) {
+        var mainImage2 = document.getElementById('mainImage2');
+        mainImage2.style.opacity = 0;
+        setTimeout(function() {
+            mainImage2.src = imageName2;
+            mainImage2.style.opacity = 1;
+          }, 50);
+    } 
+    function changeImage3(imageName3) {
+        var mainImage3 = document.getElementById('mainImage3');
+        mainImage3.style.opacity = 0;
+        setTimeout(function() {
+            mainImage3.src = imageName3;
+            mainImage3.style.opacity = 1;
+          }, 50);
+    }           
+   
+    </script>
+    <audio id="music" src="/music/Foxtail-Grass Studio - 愿いの果て.mp3" loop autoplay></audio>
+</body>
+</html>
