@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="/css/page12.css" />
     <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/css/player1.css" />
+    <link type="text/css" rel="stylesheet" href="/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/css/player.css">
+    <script src="/js/player.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -73,8 +76,8 @@
                 </div>
                 <div class="mod_song_info">
                     <div class="song_info__info"><a class="song_info__cover" href="" target="_blank"
-                            rel="noopener noreferrer"><img class="song_info__pic" loading="lazy"
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAD0lEQVR4AWM4bYwJh7QgANLSYzmZH3ISAAAAAElFTkSuQmCC"
+                            rel="noopener noreferrer"><img class="song_info__pic" loading="lazy" style="height: 95%;width: 85%;margin-left: 40px; opacity: 0.75;border-radius: 10px;margin-top: 7px;"
+                                src="/image/psc (3).jpg"
                                 data-qar-def="//y.qq.com/mediastyle/global/img/album_300.png?max_age=2592000" /></a>
                     </div>
                     <div class="song_info__lyric">
@@ -87,38 +90,124 @@
                 </div>
             </div>
         </div>
-        <div class="player__ft"><a class="btn_big_prev"><span class="icon_txt">上一首</span></a><a
-                class="btn_big_play"><span class="icon_txt">播放</span></a><a class="btn_big_next"><span
-                    class="icon_txt">下一首</span></a>
-            <div class="player_music">
-                <div class="player_progress">
-                    <div class="player_progress__inner">
-                        <div class="player_progress__load" style="width:0;margin-left:0"></div>
-                        <div class="player_progress__play" style="width:0;margin-left:0"><i
-                                class="player_progress__dot"></i></div>
-                    </div>
-                </div>
-            </div><a class="btn_big_style_list" title="列表循环"><span class="icon_txt">列表循环</span></a><a
-                class="btn_big_like"><span class="icon_txt">喜欢</span></a><a class="btn_big_down"><span
-                    class="icon_txt">下载</span></a><a class="btn_big_only"><span class="icon_txt">打开纯洁模式</span></a><a
-                class="mod_btn_comment"><span class="icon_txt">无评论</span></a>
-            <div class="player_progress player_voice"><a class="btn_big_voice"><span
-                        class="icon_txt">关闭声音</span></a>
-                <div class="player_progress__inner">
-                    <div class="player_progress__play" style="width:100%"><i class="player_progress__dot"></i></div>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </div>
     <div class="left_box"></div>
     <div class="right_box"></div>
-    <div class="bottom_box"></div>
+           <div class="play-box">
+            <player></player>
+            <div class="player-tips"></div>
+        </div>
+        <div class="music-list">
+            <div class="music-list-item" data-src="/music/狐の工作室 - 天空を駆ける風の都.mp3">天空を駆ける風の都</div>
+            <div class="music-list-item" data-src="/music/Foxtail-Grass Studio - 桜雪摩天楼.mp3">桜雪摩天楼</div>
+            <div class="music-list-item" data-src="/music/Foxtail-Grass Studio - 愿いの果て.mp3">愿いの果て</div>
+            <div class="music-list-item" data-src="/music/Re：Volte - 永远の巫女.mp3">永远の巫女</div>
+            <div class="music-list-item" data-src="/music/流派未月亭 - 因縁 - empiricism -.mp3"> 因縁 - empiricism -</div>
+            <div class="music-list-item" data-src="/music/logical emotion - フォールオブフォール　~ 秋めく滝.mp3">フォールオブフォール　~ 秋めく滝</div>
+            <div class="music-list-item" data-src="/music/Re：Volte - 红楼 ~ Eastern Dream... & さくらさくら ~ Japanize Dream.mp3">さくらさくら ~ Japanize Dream</div>
+            
+            <!-- 添加更多音乐项目 -->
+        </div>
+        <div class="SG">
+            <div class="singer">狐の工作室</div>
+            <div class="singer">Foxtail-Grass Studio</div>
+            <div class="singer">Foxtail-Grass Studio</div>
+            <div class="singer">Re：Volte</div>
+            <div class="singer">流派未月亭</div>
+            <div class="singer">logical emotion</div>
+            <div class="singer">Re：Volte</div>
+        </div>
+        <div class="time">
+            <div class="tm">4:49</div>
+            <div class="tm">3:44</div>
+            <div class="tm">1:21</div>
+            <div class="tm">2:25</div>
+            <div class="tm">3:47</div>
+            <div class="tm">4:44</div>
+            <div class="tm">3:45</div>
+        </div>
+        <div class="TJ-Music">
+            <p>幻想少女的百年祭 - 东方Project同人音乐</p>
+        </div>
+        <div class="xingshang">
+            <p>纯音乐，请欣赏</p>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var player = new Player();
+        player.init({
+            
+            effect: 0,//频谱效果,不设置或0为随机变化,1为条形柱状,2为环状声波,3 心电图效果
+            color: null,//颜色 color:16进制颜色代码,不设置或设置为空(空字符或null)将随机使用默认颜色
+            button: {//设置生成的控制按钮,不设置button默认全部创建
+                prev: true,//上一首
+                play: true,//播放,暂停
+                next: true,//下一首
+                volume: true,//音量
+                progressControl: true,//是否开启进度控制
+            },
+            event: function (e) {
+                //这是一个事件方法,点击控制按钮会到此方法
+                //参数:e.eventType 事件类型
+                //参数:e.describe 事件详情,或参数
+                //e.eventType  prev: 点击上一首,next：点击下一首,play:点击 播放/暂停
+                console.log(e);
+            },
+            energy: function (value) {
+                //此时播放的能量值,时刻变化
+                //console.log(value);
+            },
+            playList: [//播放列表
+                {
+                    title: "天空を駆ける風の都.mp3",//音乐标题
+                    album: "",//所属专辑
+                    artist: "",//艺术家
+                    mp3: "/music/狐の工作室 - 天空を駆ける風の都.mp3",//音乐路径
+                },
+                {
+                    title: "因縁 - empiricism",//音乐标题
+                    album: "",//所属专辑
+                    artist: "",//艺术家
+                    mp3: "/music/流派未月亭 - 因縁 - empiricism -.mp3",//音乐路径
+                },
+                {
+                    title: "桜雪摩天楼",//音乐标题
+                    album: "",//所属专辑
+                    artist: "",//艺术家
+                    mp3: "/music/Foxtail-Grass Studio - 桜雪摩天楼.mp3",//音乐路径
+                },
+                {
+                    title: " 愿いの果て",//音乐标题
+                    album: "",//所属专辑
+                    artist: "",//艺术家
+                    mp3: "/music/Foxtail-Grass Studio - 愿いの果て.mp3",//音乐路径
+                },
+                {
+                    title: "红楼 ~ Eastern Dream... & さくらさくら ~ Japanize Dream",//音乐标题
+                    album: "",//所属专辑
+                    artist: "",//艺术家
+                    mp3: "/music/Re：Volte - 红楼 ~ Eastern Dream... & さくらさくら ~ Japanize Dream.mp3",//音乐路径
+                },
+                {
+                    title: "フォールオブフォール　~ 秋めく滝",//音乐标题
+                    album: "",//所属专辑
+                    artist: "",//艺术家
+                    mp3: "/music/logical emotion - フォールオブフォール　~ 秋めく滝.mp3",//音乐路径
+                },
+                {
+                    title: "永远の巫女",//音乐标题
+                    album: "",//所属专辑
+                    artist: "",//艺术家
+                    mp3: "/music/Re：Volte - 永远の巫女.mp3",//音乐路径
+                },
+                
+            ]
+        });
+        
+    </script>
 </body>
 
 </html>
 
-<script crossorigin="anonymous" type="text/javascript"
-    src="/js/runtimePage.js"></script>
-<script crossorigin="anonymous" type="text/javascript"
-    src="/ryqq/js/Page.chunk.js"></script>

@@ -1,3 +1,6 @@
+*{
+    z-index: 9999;
+}
 body {
     font-family: "微软雅黑";
     background-color: #222;
@@ -22,7 +25,7 @@ h1 {
     cursor: pointer;
     transform: scale(0.5);
     transition: background-color 0.3s; /* 添加过渡效果 */
-    z-index: 10;
+    z-index: 9999;
 }
 .play-button.clicked {
     transform: scale(0.6);
